@@ -34,7 +34,7 @@ module ActiveAdmin
           end
 
           collection_action :download_csv, method: :post do
-            admin_report = AdminReport.create!(
+            admin_report = ::AdminReport.create!(
               author_id: current_admin_user.id,
               entity: current_collection.name,
               status: :pending
