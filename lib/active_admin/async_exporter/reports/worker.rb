@@ -2,7 +2,7 @@
 
 module ActiveAdmin
   module AsyncExporter
-    class Worker < ApplicationJob
+    class Worker < ActiveJob::Base
       def perform(options = {})
         controller = options[:controller].classify.constantize.new
         columns = options[:columns]
